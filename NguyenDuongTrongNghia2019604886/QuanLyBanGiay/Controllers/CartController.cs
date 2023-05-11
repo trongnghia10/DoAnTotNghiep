@@ -202,7 +202,7 @@ namespace DoAn_LapTrinhWeb.Controllers
                 orderDiscount = (priceSum + 30000 - order.total).ToString("#,0VND", culture.NumberFormat);
                 orderPrice = priceSum.ToString("#,0VND", culture.NumberFormat);
                 orderTotal = order.total.ToString("#,0VND", culture.NumberFormat);
-                //SendVerificationLinkEmail(emailID, orderID, orderItem, orderDiscount, orderPrice, orderTotal, contentWard, district, province); //nếu muốn gửi email đơn hàng thì bật lên
+                SendVerificationLinkEmail(emailID, orderID, orderItem, orderDiscount, orderPrice, orderTotal, contentWard, district, province); //nếu muốn gửi email đơn hàng thì bật lên
                 Notification.setNotification3s("Đặt hàng thành công", "success");
                 return RedirectToAction("TrackingOrder", "Account");
             }
@@ -236,7 +236,7 @@ namespace DoAn_LapTrinhWeb.Controllers
                 Port = 587,
                 EnableSsl = true, //bật ssl
                 DeliveryMethod = SmtpDeliveryMethod.Network,
-                //UseDefaultCredentials = false,
+                UseDefaultCredentials = false,
                 Credentials = new NetworkCredential(fromEmail.Address, fromEmailPassword)
             };
 
