@@ -232,11 +232,11 @@ namespace DoAn_LapTrinhWeb.Controllers
             body = body.Replace("{{province}}", province);
             var smtp = new SmtpClient
             {
-                Host = EmailConfig.emailHost, //tên mấy chủ nếu bạn dùng gmail thì đổi  "Host = "smtp.gmail.com"
+                Host = EmailConfig.emailHost, //tên máy chủ nếu bạn dùng gmail thì đổi  "Host = "smtp.gmail.com"
                 Port = 587,
                 EnableSsl = true, //bật ssl
                 DeliveryMethod = SmtpDeliveryMethod.Network,
-                UseDefaultCredentials = false,
+                //UseDefaultCredentials = false,
                 Credentials = new NetworkCredential(fromEmail.Address, fromEmailPassword)
             };
 

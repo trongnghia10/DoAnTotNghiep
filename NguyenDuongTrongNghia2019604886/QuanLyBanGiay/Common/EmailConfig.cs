@@ -13,6 +13,7 @@ namespace DoAn_LapTrinhWeb.Common
         public const string emailID = "trongnghia101201@gmail.com";
         public const string emailPassword = "Hi0352293033";
         public const string emailHost = "smtp.gmail.com"; //nếu dùng gmail thì đổi thành  "Host = "smtp.gmail.com"
+        //public const string emailHost = "smtp.mail.yahoo.com";
         public const string emailName = "TNSHOP";//Tên email hiển thị khi gửi
     }
     
