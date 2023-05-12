@@ -2365,6 +2365,7 @@
     <Content Include="Views\Account\TrackingOrderDetail.cshtml" />
     <Content Include="Views\Cart\PreviewCart.cshtml" />
     <Content Include="Views\Account\Address.cshtml" />
+    <Content Include="Views\Cart\VNPayCheckout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

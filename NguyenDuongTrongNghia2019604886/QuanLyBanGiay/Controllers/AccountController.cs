@@ -71,7 +71,7 @@ namespace DoAn_LapTrinhWeb.Controllers
                 else
                     return RedirectToAction("Index", "Home");
             }
-            Notification.setNotification3s("Email, mật khẩu không đúng, hoặc tài khoản bị vô hiệu hóa", "error");
+            Notification.setNotification3s("Tài khoản, mật khẩu không đúng!", "error");
             return View(model);
         }
         //Đăng xuất tài khoản

@@ -68,7 +68,7 @@
     <!-- ...:::: Start Checkout Section:::... -->
     <div class="checkout-section">
         <div class="container ">
-            <h4 class="p-3 mb-2 text-white" style="background-color:red;">Khi nhấn đặt hàng, chúng mình sẽ liên hệ lại bạn để xác nhận đơn hàng nhé!</h4>
+            <h4 class="p-3 mb-2 text-white" style="background-color:red;">Miễn phí vận chuyển khi thanh toán ngay bằng VNPay!!!</h4>
         </div>
         <div class="container">
             <!-- Start User Details Checkout Form -->
@@ -194,7 +194,7 @@
                                     <tfoot style="font-weight:500">
                                         <tr>
                                             <th>Kích cỡ: </th>
-                                            <td><input id="size" type="text" style="width:100px"/></td>
+                                            <td><input id="size" type="text" style="width:100px" /></td>
                                         </tr>
                                         <tr>
                                             <th>Tạm tính</th>
@@ -218,8 +218,11 @@
                             <div class="payment_method">
                                 <div class="order_button d-flex justify-content-end">
                                     <button class="btn btn-md btn-black-default-hover" id="save-order" type="button">
-                                        Đặt hàng ngay
+                                        Đặt hàng ngay (COD)
                                     </button>
+                                    &nbsp;
+                                    <a href="@Url.Action("VNPayCheckout","Cart")" id="save-order" class="btn btn-md btn-black-default-hover">Thanh toán VNPay</a>
+                                    
                                 </div>
                             </div>
                         </div>
