@@ -9,6 +9,7 @@
     string nextPageIcon = "<i class='next'></i>";
     string price2 = "";
     string discountPrice2 = "";
+    int count = 0;
 }
 <!--begin::toolbar-->
 <div class="toolbar" id="kt_toolbar">
@@ -84,7 +85,7 @@
                                     <path opacity="0.5" d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z" fill="black" />
                                 </svg>
                             </span>
-                            <!--end::Svg Icon-->Thùng rác (<span id="count-trash">@ViewBag.countTrash</span>)    
+                            <!--end::Svg Icon--> (<span id="count-trash">@ViewBag.countTrash</span>)    
                         </a>
                         <!--end::Filter-->
                         <!--begin::Add Game Account-->
@@ -115,7 +116,7 @@
                             <thead>
                                 <!--begin::Table row-->
                                 <tr class="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
-                                    <th class="min-w-50px" tabindex="1" arowspan="1" colspan="1" style="width:50px;">ID</th>
+                                    <th class="min-w-50px" tabindex="1" arowspan="1" colspan="1" style="width:50px;">STT</th>
                                     <th class="min-w-300px" tabindex="2" rowspan="1" colspan="1" style="width:300px;">Giá bán</th>
                                     <th class="min-w-110px" tabindex="3" rowspan="1" colspan="1" style="width:110px;">Ảnh</th>
                                     <th class="min-w-110px" tabindex="4" rowspan="1" colspan="1" style="width:110px;">Thương hiệu</th>
@@ -131,8 +132,9 @@
                             <tbody class="text-gray-600 fw-bold">
                                 @foreach (var item in Model)
                                 {
+                                    count++;
                                     <tr id="item_@item.product_id">
-                                        <td><a class="text-gray-600" target="_blank" href="~/@SlugGenerator.SlugGenerator.GenerateSlug(item.product_name)-@item.product_id">@item.product_id</a> </td>
+                                        <td>@count</td>
                                         <td>@item.product_name</td>
                                         <td>
                                             <a target="_blank" href="~/@SlugGenerator.SlugGenerator.GenerateSlug(item.product_name)-@item.product_id">

@@ -58,12 +58,12 @@
                         <h6 class="sidebar-title">Tag Sản Phẩm</h6>
                         <div class="sidebar-content">
                             <div class="tag-link">
-                                <a href="search?s=asus">#Adidas</a>
-                                <a href="search?s=apple">#Nike</a>
-                                <a href="search?s=acer">#Jordan</a>
-                                <a href="search?s=msi">#Gucci</a>
-                                <a href="search?s=hp">#Chanel</a>
-                                <a href="search?s=lenovo">#Sixdo</a>
+                                <a href="search?s=adidas">#Adidas</a>
+                                <a href="search?s=nike">#Nike</a>
+                                <a href="search?s=jordan">#Jordan</a>
+                                <a href="search?s=gucci">#Gucci</a>
+                                <a href="search?s=chanel">#Chanel</a>
+                                <a href="search?s=ananas">#Sixdo</a>
                             </div>
                         </div>
                     </div> <!-- End Single Sidebar Widget -->
@@ -181,97 +181,7 @@
                                                                     </h6>
                                                                 </div>
                                                             </div>
-                                                            <div class="text-center">
-                                                                <ul class="review-star">
-                                                                    @{
-                                                                        double onestar = 1; int c_onestar = 0; double truestar = 2; int c_truestar = 0;
-                                                                        double threestar = 3; int c_threestar = 0; ; double fourstar = 4; int c_fourstar = 0;
-                                                                        double fivestar = 5; int c_fivestar = 0; int totalrating = 0; double avg = 0;
-                                                                        string avgStar = "";
-                                                                        foreach (var avgfb in AvgFeedback)
-                                                                        {
-                                                                            foreach (var feedbackOrder in listOrderDetail)
-                                                                            {
-                                                                                if (avgfb.product_id == item.product_id && avgfb.stastus == "2" && feedbackOrder.Order.status == "3" && feedbackOrder.product_id == item.product_id)
-                                                                                {
-                                                                                    totalrating++;
-                                                                                    if (avgfb.rate_star == 1)
-                                                                                    {
-                                                                                        c_onestar++;
-                                                                                    }
-                                                                                    if (avgfb.rate_star == 2)
-                                                                                    {
-                                                                                        c_truestar++;
-                                                                                    }
-                                                                                    if (avgfb.rate_star == 3)
-                                                                                    {
-                                                                                        c_threestar++;
-                                                                                    }
-                                                                                    if (avgfb.rate_star == 4)
-                                                                                    {
-                                                                                        c_fourstar++;
-                                                                                    }
-                                                                                    if (avgfb.rate_star == 5)
-                                                                                    {
-                                                                                        c_fivestar++;
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                        avg = (onestar * c_onestar / totalrating) + (truestar * c_truestar / totalrating) + (threestar * c_threestar / totalrating) +
-                                                                        (fourstar * c_fourstar / totalrating) + (fivestar * c_fivestar / totalrating);
-                                                                        if (avg >= 1 && avg < 2)
-                                                                        {
-                                                                            avgStar = "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>";
-                                                                        }
-                                                                        else if ((avg >= 2) && (avg < 3))
-                                                                        {
-                                                                            avgStar = "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>";
-                                                                        }
-                                                                        else if ((avg >= 3) && (avg < 4))
-                                                                        {
-                                                                            avgStar = "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>";
-                                                                        }
-                                                                        else if ((avg >= 4) && (avg < 5))
-                                                                        {
-                                                                            avgStar = "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>";
-                                                                        }
-                                                                        else if (avg == 5)
-                                                                        {
-                                                                            avgStar = "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='fill'><i class='ion-android-star'></i></li>";
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            avgStar = "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>";
-                                                                        }
-                                                                    }
-                                                                    @Html.Raw(avgStar)
-                                                                </ul>
-                                                            </div>
+                                                            
                                                             <div class="text-center">
                                                                 @if (item.Discount.discount_star < DateTime.Now && item.Discount.discount_end > DateTime.Now && item.Discount.discount_price != 0)
                                                                 {
@@ -307,92 +217,7 @@
                                                                     @item.product_name
                                                                 </a>
                                                             </h5>
-                                                            <ul class="review-star">
-                                                                @{
-                                                                    double onestar = 1; int c_onestar = 0; double truestar = 2; int c_truestar = 0;
-                                                                    double threestar = 3; int c_threestar = 0; ; double fourstar = 4; int c_fourstar = 0;
-                                                                    double fivestar = 5; int c_fivestar = 0; int totalrating = 0; double avg = 0;
-                                                                    string avgStar = "";
-                                                                    foreach (var avgfb in AvgFeedback)
-                                                                    {
-                                                                        if (avgfb.product_id == item.product_id && avgfb.stastus == "2")
-                                                                        {
-                                                                            totalrating++;
-                                                                            if (avgfb.rate_star == 1)
-                                                                            {
-                                                                                c_onestar++;
-                                                                            }
-                                                                            if (avgfb.rate_star == 2)
-                                                                            {
-                                                                                c_truestar++;
-                                                                            }
-                                                                            if (avgfb.rate_star == 3)
-                                                                            {
-                                                                                c_threestar++;
-                                                                            }
-                                                                            if (avgfb.rate_star == 4)
-                                                                            {
-                                                                                c_fourstar++;
-                                                                            }
-                                                                            if (avgfb.rate_star == 5)
-                                                                            {
-                                                                                c_fivestar++;
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                    avg = (onestar * c_onestar / totalrating) + (truestar * c_truestar / totalrating) + (threestar * c_threestar / totalrating) +
-                                                                    (fourstar * c_fourstar / totalrating) + (fivestar * c_fivestar / totalrating);
-                                                                    if (avg >= 1 && avg < 2)
-                                                                    {
-                                                                        avgStar = "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='empty'><i class='ion-android-star'></i></li>";
-                                                                    }
-                                                                    else if ((avg >= 2) && (avg < 3))
-                                                                    {
-                                                                        avgStar = "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='empty'><i class='ion-android-star'></i></li>";
-                                                                    }
-                                                                    else if ((avg >= 3) && (avg < 4))
-                                                                    {
-                                                                        avgStar = "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='empty'><i class='ion-android-star'></i></li>";
-                                                                    }
-                                                                    else if ((avg >= 4) && (avg < 5))
-                                                                    {
-                                                                        avgStar = "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='empty'><i class='ion-android-star'></i></li>";
-                                                                    }
-                                                                    else if (avg == 5)
-                                                                    {
-                                                                        avgStar = "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='fill'><i class='ion-android-star'></i></li>";
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        avgStar = "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                               "<li class='empty'><i class='ion-android-star'></i></li>";
-                                                                    }
-                                                                }
-                                                                @Html.Raw(avgStar)
-                                                            </ul>
+                                                            
                                                             <span class="product-list-price">
                                                                 @if (item.Discount.discount_star < DateTime.Now && item.Discount.discount_end > DateTime.Now && item.Discount.discount_price != 0)
                                                                 {

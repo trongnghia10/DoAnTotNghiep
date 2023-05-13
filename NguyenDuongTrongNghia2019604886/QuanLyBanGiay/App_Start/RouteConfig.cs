@@ -24,7 +24,7 @@ namespace DoAn_LapTrinhWeb
               url: "{slug}-{id}",
              defaults: new { Controller = "Products", action = "ProductDetail"}
            );
-            //rút gọn link laptop
+            //rút gọn link giày nam
             routes.MapRoute(
               name: "Giaynam",
               url: "giaynam",

@@ -400,8 +400,7 @@ namespace DoAn_LapTrinhWeb.Controllers
 
             string paymentUrl = vnpay.CreateRequestUrl(vnp_Url, vnp_HashSecret);
             Response.Redirect(paymentUrl);
-            return View();
-        }
-        
+            return RedirectToAction("SaveOrder","Cart");
+        }       
     }
 }

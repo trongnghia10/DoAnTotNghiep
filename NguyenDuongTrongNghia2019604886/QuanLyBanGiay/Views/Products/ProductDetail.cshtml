@@ -306,13 +306,13 @@
                                 Mô tả sản phẩm
                             </a>
                         </li>
-                        <li>
+                        @*<li>
                             <a class="nav-link"
                                data-bs-toggle="tab"
                                href="#specification">
                                 Thông số
                             </a>
-                        </li>
+                        </li>*@
                         <li>
                             <a class="nav-link" data-bs-toggle="tab" href="#review">
                                 Đánh giá
@@ -353,19 +353,19 @@
                                     <div class="review-form" style="margin-bottom:30px;">
                                         <div class="text-center">
                                             <h5>THÊM ĐÁNH GIÁ</h5>
-                                            <span class="ms-2 text-secondary">(Đánh giá được tính khi bạn đã mua sản phẩm, chọn sao bên dưới để đánh giá sao)</span>
+                                            <span class="ms-2 text-secondary">(Đánh giá được tính khi bạn đã mua sản phẩm)</span>
                                         </div>
                                         <form method="post">
                                             <input id="product_id" hidden value="@Model.product_id" />
                                             <input id="genre_id" hidden value="@Model.genre_id" />
                                             <input id="discount_id" hidden value="@Model.disscount_id" />
-                                            <div onmouseout="CRateSelected()" style="font-size: 23px; text-align:center; cursor:pointer;">
+                                            @*<div onmouseout="CRateSelected()" style="font-size: 23px; text-align:center; cursor:pointer;">
                                                 <i id="rate1" onmouseout="CRateOut(1)" onmouseover="CRateOver(1)" onclick="CRateClick(1)" class="fa fa-star-o" aria-hidden="true"></i>
                                                 <i id="rate2" onmouseout="CRateOut(2)" onmouseover="CRateOver(2)" onclick="CRateClick(2)" class="fa fa-star-o" aria-hidden="true"></i>
                                                 <i id="rate3" onmouseout="CRateOut(3)" onmouseover="CRateOver(3)" onclick="CRateClick(3)" class="fa fa-star-o" aria-hidden="true"></i>
                                                 <i id="rate4" onmouseout="CRateOut(4)" onmouseover="CRateOver(4)" onclick="CRateClick(4)" class="fa fa-star-o" aria-hidden="true"></i>
                                                 <i id="rate5" onmouseout="CRateOut(5)" onmouseover="CRateOver(5)" onclick="CRateClick(5)" class="fa fa-star-o" aria-hidden="true"></i>
-                                            </div>
+                                            </div>*@
                                             <input id="lblRating" hidden value="5" />
                                             <div class="row">
                                                 <div class="col-12">
@@ -411,116 +411,7 @@
                                                                             }
                                                                         </span>
                                                                     </h6>
-                                                                    <ul class="review-star">
-                                                                        @if (comment.rate_star == 1)
-                                                                        {
-                                                                            <li class="fill">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="empty">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="empty">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="empty">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="empty">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                        }
-                                                                        else if (comment.rate_star == 2)
-                                                                        {
-                                                                            <li class="fill">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="fill">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="empty">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="empty">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="empty">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                        }
-                                                                        else if (comment.rate_star == 3)
-                                                                        {
-                                                                            <li class="fill">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="fill">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="fill">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="empty">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="empty">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                        }
-                                                                        else if (comment.rate_star == 4)
-                                                                        {
-                                                                            <li class="fill">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="fill">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="fill">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="fill">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="empty">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                        }
-                                                                        else if (comment.rate_star == 5)
-                                                                        {
-                                                                            <li class="fill">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="fill">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="fill">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="fill">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="fill">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            <li class="empty">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="empty">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="empty">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="empty">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                            <li class="empty">
-                                                                                <i class="ion-android-star"></i>
-                                                                            </li>
-                                                                        }
-                                                                    </ul>
+                                                                  
                                                                 </div>
                                                                 <div class="comment-content-right">
                                                                     @if (User.Identity.IsAuthenticated)
@@ -670,94 +561,7 @@
                                                 </h6>
                                             </div>
                                         </div>
-                                        <div class="text-center">
-                                            <ul class="review-star">
-                                                @{
-                                                    double _onestar = 1; int _c_onestar = 0; double _truestar = 2; int _c_truestar = 0;
-                                                    double _threestar = 3; int _c_threestar = 0; ; double _fourstar = 4; int _c_fourstar = 0;
-                                                    double _fivestar = 5; int _c_fivestar = 0; int _totalrating = 0; double _avg = 0;
-                                                    string _avgStar = "";
-                                                    foreach (var avgfb in listFeedback)
-                                                    {
-                                                        if (avgfb.product_id == item.product_id)
-                                                        {
-                                                            _totalrating++;
-                                                            if (avgfb.rate_star == 1)
-                                                            {
-                                                                _c_onestar++;
-                                                            }
-                                                            if (avgfb.rate_star == 2)
-                                                            {
-                                                                _c_truestar++;
-                                                            }
-                                                            if (avgfb.rate_star == 3)
-                                                            {
-                                                                _c_threestar++;
-                                                            }
-                                                            if (avgfb.rate_star == 4)
-                                                            {
-                                                                _c_fourstar++;
-                                                            }
-                                                            if (avgfb.rate_star == 5)
-                                                            {
-                                                                _c_fivestar++;
-                                                            }
-                                                        }
-                                                    }
-                                                    _avg = (_onestar * _c_onestar / _totalrating) + (_truestar * _c_truestar / _totalrating) + (_threestar * _c_threestar / _totalrating) +
-                                                                                        (_fourstar * _c_fourstar / _totalrating) + (_fivestar * _c_fivestar / _totalrating);
-                                                    if (_avg >= 1 && _avg < 2)
-                                                    {
-                                                        _avgStar = "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>";
-                                                    }
-                                                    else if ((_avg >= 2) && (_avg < 3))
-                                                    {
-                                                        _avgStar = "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>";
-                                                    }
-                                                    else if ((_avg >= 3) && (_avg < 4))
-                                                    {
-                                                        _avgStar = "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>";
-                                                    }
-                                                    else if ((_avg >= 4) && (_avg < 5))
-                                                    {
-                                                        _avgStar = "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>";
-                                                    }
-                                                    else if (_avg == 5)
-                                                    {
-                                                        _avgStar = "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='fill'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='fill'><i class='ion-android-star'></i></li>";
-                                                    }
-                                                    else
-                                                    {
-                                                        _avgStar = "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>" +
-                                                                                                   "<li class='empty'><i class='ion-android-star'></i></li>";
-                                                    }
-                                                }
-                                                @Html.Raw(_avgStar)
-                                            </ul>
-                                        </div>
+                                        
                                         <div class="text-center">
                                             @if (item.Discount.discount_star < DateTime.Now && item.Discount.discount_end > DateTime.Now && item.Discount.discount_price != 0)
                                             {
