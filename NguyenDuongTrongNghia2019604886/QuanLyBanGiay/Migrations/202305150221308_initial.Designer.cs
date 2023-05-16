@@ -7,13 +7,13 @@ namespace DoAn_LapTrinhWeb.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class update_product : IMigrationMetadata
+    public sealed partial class initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(update_product));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "202305030333477_update_product"; }
+            get { return "202305150221308_initial"; }
         }
         
         string IMigrationMetadata.Source
